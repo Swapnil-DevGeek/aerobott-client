@@ -1,0 +1,150 @@
+/* Container styles */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  
+  /* Inner container styles */
+  .innerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  /* Title styles */
+  .title {
+    font-size: 1.875rem; /* 3xl in Tailwind */
+    font-weight: 600; /* Semi-bold */
+  }
+  
+  .titleHighlight {
+    font-weight: 800; /* Extra-bold */
+    color: #216FB9;
+  }
+  
+  /* Cards container for larger screens */
+  .cardsContainer {
+    display: none; /* Hidden by default */
+  }
+  
+  @media (min-width: 1024px) { /* lg breakpoint in Tailwind */
+    .cardsContainer {
+      display: flex; /* Flex layout for large screens */
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 1rem 0;
+    }
+  }
+  
+  /* Carousel container for smaller screens */
+  .carouselContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media (min-width: 1024px) { /* lg breakpoint in Tailwind */
+    .carouselContainer {
+      display: none; /* Hidden for large screens */
+    }
+  }
+  
+  /* Card styles */
+  .card {
+    background-color: white;
+    border: 1px solid #e5e7eb; /* Tailwind's border color */
+    border-radius: 0.5rem; /* Rounded-lg */
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(33, 111, 185, 0.2);
+  }
+  
+  @media (min-width : 1024px){
+    .card{
+      box-shadow: none;
+    }
+    .card:hover {
+      transform: translateY(-5px); 
+      box-shadow: 0 25px 50px -12px rgba(33, 111, 185, 0.3);
+    }
+  }
+
+ 
+  
+  /* Card image container styles */
+  .cardImageContainer {
+    background-color: rgba(33, 111, 185, 0.2);
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  /* Card image styles */
+  .cardImage {
+    width: 280px;
+    height: 220px;
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+  
+  /* Card title styles */
+  .cardTitle {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Card price container styles */
+  .cardPriceContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .currentPrice {
+    color: #216FB9;
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+  
+  .previousPrice {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: line-through;
+  }
+  
+  /* Buy button styles */
+  .buyButton {
+    padding: 0.5rem 1rem;
+    background-color: #216FB9;
+    border-radius: 1.5rem;
+    color: white;
+  }
+  
+  /* Carousel button styles */
+  .carouselButton {
+    padding: 0.5rem;
+  }
+  
+  /* View all button styles */
+  .viewAllButton {
+    border: 2px solid #216FB9;
+    border-radius: 1.5rem;
+    padding: 0.5rem 1rem;
+    color: #216FB9;
+    margin-top: 2rem;
+  }
+  
+  .viewAllButtonContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  

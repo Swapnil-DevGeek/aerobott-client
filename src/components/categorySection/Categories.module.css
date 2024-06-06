@@ -1,0 +1,89 @@
+/* Categories.module.css */
+
+.container {
+  max-width: 1280px;
+  margin: 4rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Added */
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #80caff1c;
+}
+
+.heading {
+  font-size: 1.875rem;
+  margin-top: 1rem; 
+  margin-bottom: 2rem;
+  text-align: center; 
+}
+
+.highlight {
+  font-weight: bold;
+  color: #216FB9;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Added */
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 10rem;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(33, 111, 185, 0.2);
+}
+
+.cardImage {
+  height: 40px;
+  object-fit: contain;
+  border-radius: 0.25rem;
+}
+
+.cardName {
+  margin-top: 1rem;
+  color: #216FB9;
+  font-weight: bold;
+}
+
+@media (min-width: 350px) {
+  .cardsContainer {
+      column-gap: 4rem;
+      row-gap: 2rem;
+  }
+  .card {
+      flex-basis: calc(50% - 2rem); /* For 2 cards per row */
+  }
+}
+
+@media (min-width: 768px) {
+  .cardsContainer {
+      column-gap: 4rem;
+  }
+  .card {
+      flex-basis: calc(33.33% - 2rem); /* For 3 cards per row */
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardsContainer {
+      column-gap: 3rem;
+  }
+  .card {
+      flex-basis: calc(16.66% - 3rem); /* For 6 cards per row */
+  }
+}

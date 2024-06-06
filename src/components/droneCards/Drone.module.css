@@ -1,0 +1,134 @@
+/* Drone.module.css */
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+.highlight {
+  font-weight: 800;
+  color: #216FB9;
+}
+
+.cardsContainer {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.desktopView {
+  display: none;
+}
+
+.mobileView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  transition: transform 0.3s;
+  padding-bottom: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(33, 111, 185, 0.3);
+}
+
+@media (min-width: 1024px) {
+  .desktopView {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.25rem;
+      align-items: center;
+  }
+
+  .card{
+    box-shadow: none;
+  }
+  .card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 25px 50px -12px rgba(33, 111, 185, 0.3);
+  }
+
+  .mobileView {
+      display: none;
+  }
+}
+
+.cardImage {
+  width: 340px;
+  height: 280px;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.cardContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
+
+.cardTitle {
+  color: #216FB9;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 1rem;
+}
+
+.cardSubtitle {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.875rem;
+  font-weight: 300;
+  padding: 0 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.button {
+  background-color: #216FB9;
+  color: white;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.viewAllButton {
+  border: 2px solid #216FB9;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1rem;
+  color: #216FB9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
