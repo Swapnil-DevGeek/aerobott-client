@@ -103,6 +103,17 @@
   padding: 0 1rem;
 }
 
+.cardBadge{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #216FB9;
+  padding: 0.5rem 1rem;
+  border-radius: 1.25rem;
+  gap: 0.25rem;
+  color: white;
+}
+
 .buttonContainer {
   display: flex;
   justify-content: center;
