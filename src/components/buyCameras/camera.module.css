@@ -1,4 +1,10 @@
 /* Container styles */
+.parent{
+    background-color: #80CAFF12;
+    padding-top: 2rem;
+    padding-bottom: 1.4rem;
+    margin: 2rem 0;
+}
 .container {
     max-width: 1280px;
     margin: 0 auto;
@@ -6,7 +12,8 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 3rem;
-  }
+    
+}
   
   /* Inner container styles */
   .innerContainer {
@@ -60,8 +67,8 @@
   /* Card styles */
   .card {
     background-color: white;
-    border: 1px solid #e5e7eb; /* Tailwind's border color */
-    border-radius: 0.5rem; /* Rounded-lg */
+    border: 1px solid #e5e7eb; 
+    border-radius: 0.5rem; 
     transition: transform 0.2s, box-shadow 0.2s;
     padding: 1rem;
     box-shadow: 0 10px 15px -3px rgba(33, 111, 185, 0.2);
@@ -83,7 +90,6 @@
   
   /* Card image container styles */
   .cardImageContainer {
-    background-color: rgba(33, 111, 185, 0.2);
     padding: 1rem;
     border-radius: 0.5rem;
   }

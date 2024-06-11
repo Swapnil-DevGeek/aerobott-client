@@ -1,4 +1,10 @@
 /* Container styles */
+.parent{
+    background-color: #80CAFF12;
+    padding-top: 2rem;
+    padding-bottom: 1.4rem;
+    margin: 2rem 0;
+}
 .container {
     max-width: 1280px;
     margin: 0 auto;
@@ -6,7 +12,8 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 3rem;
-  }
+    
+}
   
   /* Inner container styles */
   .innerContainer {
@@ -29,42 +36,26 @@
     color: #216FB9;
   }
   
-  /* Cards container for larger screens */
-  .cardsContainer {
-    display: none; /* Hidden by default */
-  }
-  
-  @media (min-width: 1024px) { /* lg breakpoint in Tailwind */
+  @media (min-width: 1024px) { 
     .cardsContainer {
-      display: flex; /* Flex layout for large screens */
+      display: flex; 
       justify-content: space-between;
       align-items: center;
       width: 100%;
       margin: 1rem 0;
     }
   }
-  
-  /* Carousel container for smaller screens */
-  .carouselContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  @media (min-width: 1024px) { /* lg breakpoint in Tailwind */
-    .carouselContainer {
-      display: none; /* Hidden for large screens */
-    }
-  }
+
   
   /* Card styles */
   .card {
     background-color: white;
-    border: 1px solid #e5e7eb; /* Tailwind's border color */
-    border-radius: 0.5rem; /* Rounded-lg */
+    border: 1px solid #e5e7eb; 
+    border-radius: 0.5rem; 
     transition: transform 0.2s, box-shadow 0.2s;
     padding: 1rem;
     box-shadow: 0 10px 15px -3px rgba(33, 111, 185, 0.2);
+    margin: 1.4rem 1rem 0 1rem;
   }
   
   @media (min-width : 1024px){
@@ -83,7 +74,6 @@
   
   /* Card image container styles */
   .cardImageContainer {
-    background-color: rgba(33, 111, 185, 0.2);
     padding: 1rem;
     border-radius: 0.5rem;
   }
@@ -129,17 +119,14 @@
     color: white;
   }
   
-  /* Carousel button styles */
-  .carouselButton {
-    padding: 0.5rem;
-  }
-  
+
   /* View all button styles */
-  .viewAllButton {
-    border: 2px solid #216FB9;
+    .viewAllButton {
+    border: none;
     border-radius: 1.5rem;
+    background-color: #216FB9;
     padding: 0.5rem 1rem;
-    color: #216FB9;
+    color: white;
     margin-top: 2rem;
   }
   
@@ -148,5 +135,4 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-  }
-  
+}
