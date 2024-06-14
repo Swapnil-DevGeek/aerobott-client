@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import profile from "../../assets/profile.png";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isHome, setIsHome] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/' || location.pathname === '/home') {
+      setIsHome(true);
+    } else {
+      setIsHome(false);
+    }
+  }, [location]);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
@@ -17,20 +28,15 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white border-gray-200 shadow-md">
+    <nav className={`bg-white my-0 ${isHome ? "shadow-md" : "shadow-none"}`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
-        <a
-          href="/"
-        >
-          <img
-            src={logo}
-            alt="Aerobott Logo"
-          />
+        <a href="/">
+          <img src={logo} alt="Aerobott Logo" />
         </a>
 
-        {/* hamberger logo */}
+        {/* hamburger logo */}
         <div className="flex justify-center items-center gap-4">
-        <img className="lg:hidden md:hidden" src={profile} alt="" />
+          <img className="lg:hidden md:hidden" src={profile} alt="" />
 
           <button
             onClick={toggleNav}
@@ -56,38 +62,33 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          
         </div>
-        
+
         <div
-          className={`${
-            isNavOpen ? "block" : "hidden"
-          } w-full md:block md:w-auto `}
+          className={`${isNavOpen ? "block" : "hidden"} w-full md:block md:w-auto`}
           id="navbar-default"
         >
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
-            {menuItems.map((item,index)=>(
-                <li key={index}>
+            {menuItems.map((item, index) => (
+              <li key={index}>
                 <a
-                    href={item.href}
-                    className={`block py-2 px-3 rounded md:p-0 ${
-                        item.active 
-                        ? 'text-white bg-[#216FB9] md:bg-transparent md:text-[#216FB9]'
-                        : 'text-gray-900  hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#216FB9]'
-                    } `}
-                    aria-current = {item.active ? "page" : undefined}
+                  href={item.href}
+                  className={`block py-2 px-3 rounded md:p-0 ${
+                    item.active
+                      ? 'text-white bg-[#216FB9] md:bg-transparent md:text-[#216FB9]'
+                      : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#216FB9]'
+                  }`}
+                  aria-current={item.active ? "page" : undefined}
                 >
-                    {item.name}
+                  {item.name}
                 </a>
-                </li>
+              </li>
             ))}
-            <li className="hidden md:block lg:block"><img src={profile} alt="" /></li>
-
+            <li className="hidden md:block lg:block">
+              <img src={profile} alt="" />
+            </li>
           </ul>
-          
         </div>
-
-
       </div>
     </nav>
   );

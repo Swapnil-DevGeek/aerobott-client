@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 // icons
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
@@ -24,7 +25,7 @@ const droneData = [
   { image: agricopter, name: "Agricopter AG356", logo: agricopterLogo },
 ];
 
-const Card = ({ image, name, logo }) => (
+const Card = ({ image, name, logo , navigation}) => (
   <div className={styles.card}>
     <img src={image} alt={name} className={styles.cardImage} />
     <div className={styles.cardContent}>
@@ -45,7 +46,7 @@ const Card = ({ image, name, logo }) => (
     <div>
       <h4 className={styles.cardSubtitle}>Made In India</h4>
     </div>
-    <div className={`${styles.buttonContainer} lg:hidden lg:group-hover:flex`}>
+    <div onClick={navigation} className={`${styles.buttonContainer} lg:hidden lg:group-hover:flex`}>
       <button className={styles.button}>
         <div>View Details</div>
         <div><img src={upRight} alt="" /></div>
@@ -55,6 +56,7 @@ const Card = ({ image, name, logo }) => (
 );
 
 const Drone = () => {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextCard = () => {
@@ -66,6 +68,10 @@ const Drone = () => {
       (prevIndex) => (prevIndex - 1 + droneData.length) % droneData.length
     );
   };
+
+  const handleNavigation = () => {
+    navigate('/drone-details')
+  }
 
   return (
     <div className={styles.container}>
@@ -81,7 +87,7 @@ const Drone = () => {
           {/* desktop view */}
           <div className={styles.desktopView}>
             {droneData.map((card, index) => (
-              <Card key={index} image={card.image} name={card.name} logo={card.logo} />
+              <Card key={index} image={card.image} name={card.name} logo={card.logo} navigation={handleNavigation} />
             ))}
           </div>
           {/* Mobile view with carousel */}
@@ -99,6 +105,7 @@ const Drone = () => {
                 image={droneData[currentIndex].image}
                 name={droneData[currentIndex].name}
                 logo={droneData[currentIndex].logo}
+                navigation={handleNavigation}
               />
             </div>
             <button
