@@ -21,11 +21,11 @@ const SubHeader = () => {
   return (
     <div className='w-[100%] shadow-md border-t'>
       <div className='max-w-screen-xl mx-auto flex justify-center items-center'>
-      <div className='grid grid-cols-2 gap-x-28 gap-y-4 lg:gap-x-8 lg:grid-cols-6  p-8'>
+      <div className='grid grid-cols-2 gap-x-28 gap-y-4 lg:gap-x-12 lg:grid-cols-6 p-8'>
         {subHeadingData.map((item,index)=>(
-          <div key={index} className='flex items-center gap-6'>
+          <div key={index} className='flex items-center gap-2'>
             <img src={item.image} alt="" />
-            <div>{item.name}</div>
+            <div className={`${index ===0 ?'text-[#216FB9]' : 'text-[#2C2C2C]' } `}>{item.name}</div>
           </div>
         ))}
       </div>
