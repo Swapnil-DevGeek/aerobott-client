@@ -1,0 +1,70 @@
+.container {
+    max-width: 1280px;
+    display: flex;
+    margin: 3.5rem auto;
+  }
+  
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .logo {
+    height: 6rem;
+  }
+  
+  .certifyBadge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #216FB9;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 1.5rem;
+  }
+  
+  .droneImages {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+  
+  .priceContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .priceDetails {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .brandName {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: rgba(62, 82, 100, 0.75);
+  }
+  
+  .productName {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #216FB9;
+  }
+  
+  .price {
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+  
+  .buyButton {
+    background-color: #216FB9;
+    color: white;
+    border-radius: 1.5rem;
+    padding: 0.25rem 1.5rem;
+  }
+  
