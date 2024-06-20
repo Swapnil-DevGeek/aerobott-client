@@ -4,10 +4,9 @@
     align-items: center;
     border: 2px solid #216FB9;
     border-radius: 1rem;
-    padding: 0 2rem;
-    padding-top: 1rem; 
+    padding: 1.5rem 2rem 0 2rem;
     max-width: 24rem; 
-    margin: 1rem;
+    margin: 1.5rem 1rem;
     position: relative;
     background-color: white;
   }
@@ -15,7 +14,7 @@
   .iconCircle {
     background-color: #216FB9;
     border-radius: 50%;
-    padding: 1rem;
+    padding: 0.5rem;
     position: absolute;
     bottom: -1.5rem;
     left: 1rem;
@@ -24,20 +23,14 @@
     align-items: center;
   }
   
-  .icon {
-    color: white;
-    font-size: 1.5rem;
-  }
-  
   .content {
     width: 15rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center; 
-    margin: 0 1rem;
+    margin: 0 1rem 1rem 1rem;
     padding-left: 2rem;
-    margin-bottom: 1rem;
   }
   
   .cost {
@@ -48,6 +41,7 @@
   
   .label {
     color: #6E7898;
-    font-size: 1.25rem; /* Slightly increased font-size */
+    font-size: 1.25rem;
   }
+
   

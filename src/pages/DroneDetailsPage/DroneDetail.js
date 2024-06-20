@@ -1,9 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState,useRef,useEffect} from 'react'
+import Slider from 'react-slick'
 import FAQ from "./FAQ";
 import SubHeader from '../../components/SubHeader/SubHeader'
 import HeaderLink from "../../components/headerLink/HeaderLink"
 import AboutDrone from "../../components/aboutDrone/AboutDrone"
 import styles from './CostCard.module.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 //logos
 import icon1 from "../../assets/aboutDrones/productSpecifications/icon1.png"
@@ -24,6 +27,9 @@ import icon14 from "../../assets/aboutDrones/productSpecifications/icon14.png"
 //card images
 import toolkit from "../../assets/aboutDrones/toolkit.png";
 import  remote from "../../assets/aboutDrones/remote.png";
+
+//video
+import droneVideo from "../../assets/video/droneVideo.mp4";
 
 const SpecsCard = ({ head,subhead,logo }) => {
   return (
@@ -108,6 +114,49 @@ const DroneDetail = () => {
         );
     };
 
+    const settings = {
+        dots : true,
+        infinite : true,
+        speed : 500,
+        slidesToScroll : 1,
+        slidesToShow : 2
+    };
+
+    const settings1 = {
+      dots : true,
+      infinite :true,
+      speed : 500,
+      slidesToScroll: 1,
+      slidesToShow: 1
+    };
+
+    const videoRef = useRef(null);
+    useEffect(() => {
+        const videoElement = videoRef.current;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        videoElement.play();
+                    } else {
+                        videoElement.pause();
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
+
+        if (videoElement) {
+            observer.observe(videoElement);
+        }
+
+        return () => {
+            if (videoElement) {
+                observer.unobserve(videoElement);
+            }
+        };
+    }, []);
 
     return (
       <>
@@ -121,16 +170,28 @@ const DroneDetail = () => {
               flexibility and adaptability in their operations.
           </div>
 
-          <div className='max-w-screen-xl mx-auto mb-20 flex flex-wrap justify-center gap-16 items-center'>
+          {/* desktop  view */}
+          <div className='hidden max-w-screen-xl mx-auto mb-20 lg:flex lg:flex-wrap lg:justify-center lg:gap-16 lg:items-center'>
               {specsCardData.map((spec, index) => (
                   <SpecsCard key={index} head={spec.head} subhead={spec.subhead} logo={spec.logo}/>
               ))}
           </div>
 
+          {/* mobile view */}
+          <div className="lg:hidden max-w-screen-xl mx-auto mb-20 ">
+              <Slider {...settings}>
+                  {specsCardData.map((spec, index) => (
+                      <SpecsCard className="bg-black pb-12" key={index} head={spec.head} subhead={spec.subhead} logo={spec.logo}/>
+                  ))}
+              </Slider>
+          </div>
+
           {/* drone video */}
-          <div className="w-[100%] h-[38rem] mb-16 bg-black flex justify-center items-end py-16">
-              <div
-                  className='text-white bottom-12 flex flex-col lg:flex-row lg:justify-between lg:items-center gap-3 w-[78vw]'>
+          <div className="w-[100%] h-[42rem] mb-16 relative p-0">
+              <video ref={videoRef} controls loop controlsList = "nodownload nofullscreen noremoteplayback"
+              className="h-[100%] w-[100%] object-cover"
+              src={droneVideo}  height="42rem" />
+              <div className='absolute w-[100%] lg:px-32 px-4 py-12 bottom-10 text-white flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 '>
                   <div>
                       <div className='capitalize text-lg lg:text-2xl lg:font-semibold'>Unbox the benefits of</div>
                       <div className='lg:text-6xl text-2xl font-bold uppercase'>Agricopter A365</div>
@@ -150,10 +211,21 @@ const DroneDetail = () => {
           <Heading text={"Things You Will Get With This Drone"}/>
 
           {/* cards desktop view */}
-          <div className="max-w-screen-xl mx-auto flex justify-between items-center my-16">
-              {kitCardData.map((item,index)=>(
-                  <KitCard key={index} head={item.head} image={item.image} subtext={item.subhead}/>
-              ))}
+          <div className='hidden max-w-screen-xl mx-auto lg:flex lg:justify-center lg:items-center lg:my-12'>
+              <div className="w-full flex lg:flex-nowrap flex-wrap lg:justify-between lg:items-center lg:gap-0 gap-3 ">
+                  {kitCardData.map((item,index)=>(
+                      <KitCard key={index} head={item.head} image={item.image} subtext={item.subhead}/>
+                  ))}
+              </div>
+          </div>
+
+          {/* cards mobile view */}
+          <div className='lg:hidden max-w-screen-xl mx-auto my-12'>
+              <Slider {...settings1}>
+                  {kitCardData.map((item,index)=>(
+                      <KitCard key={index} head={item.head} image={item.image} subtext={item.subhead}/>
+                  ))}
+              </Slider>
           </div>
 
           <Heading text={"FAQ'S"}/>
