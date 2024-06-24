@@ -1,17 +1,26 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     border: 2px solid #216FB9;
     border-radius: 1rem;
-    padding: 1.5rem 2rem 0 2rem;
-    max-width: 24rem; 
+    padding: 1.5rem 2rem 1rem 2rem;
     margin: 1.5rem 1rem;
     position: relative;
     background-color: white;
-  }
-  
-  .iconCircle {
+    flex-grow: 1;
+    max-width: calc(133.33% - 3rem);
+}
+
+.iconCircle {
     background-color: #216FB9;
     border-radius: 50%;
     padding: 0.5rem;
@@ -21,27 +30,85 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .content {
-    width: 15rem;
+}
+
+.iconCircle img {
+    width: 2rem; /* Default width */
+    height: 2rem; /* Default height */
+}
+
+.content {
+    width: 100%;
+    max-width: 15rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; 
+    text-align: center;
     margin: 0 1rem 1rem 1rem;
-    padding-left: 2rem;
-  }
-  
-  .cost {
+}
+
+.cost {
     color: #216FB9;
-    font-size: 2rem; 
-    font-weight:500;
-  }
-  
-  .label {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.label {
     color: #6E7898;
     font-size: 1.25rem;
-  }
+}
 
-  
+@media (max-width: 992px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        padding: 1rem 1rem 1rem 1rem;
+        max-width: calc(133.33% - 3rem);
+    }
+    .cost {
+        font-size: 1.5rem;
+    }
+    .label {
+        font-size: 0.875rem;
+    }
+    .iconCircle img {
+        width: 1.5rem; /* Adjust width */
+        height: 1.5rem; /* Adjust height */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 0.75rem 0.75rem 1rem 0.75rem;
+        max-width: calc(133.33% - 3rem);
+    }
+    .cost {
+        font-size: 1.25rem;
+    }
+    .label {
+        font-size: 0.75rem;
+    }
+    .iconCircle img {
+        width: 1.25rem; /* Adjust width */
+        height: 1.25rem; /* Adjust height */
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        padding: 0.5rem 0.5rem 1rem 0.5rem;
+        max-width: calc(133.33% - 3rem);
+    }
+    .cost {
+        font-size: 1rem;
+    }
+    .label {
+        font-size: 0.75rem;
+    }
+    .iconCircle img {
+        width: 1rem; /* Adjust width */
+        height: 1rem; /* Adjust height */
+    }
+}

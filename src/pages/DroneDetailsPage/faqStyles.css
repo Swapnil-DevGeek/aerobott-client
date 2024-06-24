@@ -5,16 +5,16 @@
 
 .faqs .faq {
     border-bottom: 2px solid #CDD6DA40;
-    padding:2rem 3rem;
+    padding: 2rem 3rem;
 }
-.faqs .faq.open{
+.faqs .faq.open {
     background: #80CAFF12;
     border-radius: 10px;
 }
 .faqs .faq .faq-question {
     position: relative;
     transition: all 0.4s ease;
-    font-size: 1.75rem;
+    font-size: 1.75rem; /* Default font size for larger screens */
     font-weight: 700;
 }
 
@@ -24,8 +24,8 @@
     align-items: center;
     border-radius: 50%;
     padding: 1rem;
-    font-size: 1.25rem;
-    color : #216FB9;
+    font-size: 1.25rem; /* Default font size for larger screens */
+    color: #216FB9;
     background-color: #216FB933;
     font-weight: 400;
     content: "+";
@@ -47,12 +47,12 @@
 
 .faqs .faq.open .faq-question {
     margin-bottom: 15px;
-    color : #216FB9;
+    color: #216FB9;
 }
 
 .faqs .faq.open .faq-question::after {
     content: "×";
-    color : #fff;
+    color: #fff;
     background-color: #216FB9;
 }
 
@@ -61,4 +61,61 @@
     opacity: 1;
     color: #3C3C43D9;
     width: 65vw;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .faqs .faq .faq-question {
+        font-size: 1.5rem;
+    }
+    .faqs .faq .faq-question::after {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .faqs .faq {
+        padding: 1.5rem 2rem;
+    }
+    .faqs .faq .faq-question {
+        font-size: 1.25rem;
+    }
+    .faqs .faq .faq-question::after {
+        font-size: 0.875rem;
+    }
+    .faqs .faq.open .faq-answer {
+        width: 70vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .faqs .faq {
+        padding: 1rem 1.5rem;
+    }
+    .faqs .faq .faq-question {
+        font-size: 1.125rem;
+    }
+    .faqs .faq .faq-question::after {
+        font-size: 0.75rem;
+    }
+    .faqs .faq.open .faq-answer {
+        width: 75vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .faqs .faq {
+        padding: 0.75rem 1rem;
+    }
+    .faqs .faq .faq-question {
+        font-size: 1rem;
+    }
+    .faqs .faq .faq-question::after {
+        font-size: 0.625rem;
+        width: 15px;
+        height: 15px;
+    }
+    .faqs .faq.open .faq-answer {
+        width: 80vw;
+    }
 }

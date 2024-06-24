@@ -1,70 +1,152 @@
 .container {
-    max-width: 1280px;
-    display: flex;
-    margin: 3.5rem auto;
-  }
-  
-  .logoContainer {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-  }
-  
-  .logo {
-    height: 6rem;
-  }
-  
+  max-width: 1280px;
+  display: flex;
+  margin: 3.5rem auto;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.logo {
+  height: 6rem;
+}
+
+.certifyBadge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #216FB9;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 1.5rem;
+  font-size: 1rem; /* Default font size */
+}
+
+.droneImages {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priceDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: rgba(62, 82, 100, 0.75);
+}
+
+.productName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #216FB9;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.buyButton {
+  background-color: #216FB9;
+  color: white;
+  border-radius: 1.5rem;
+  padding: 0.25rem 1.5rem;
+  font-size: 1rem; /* Default font size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
   .certifyBadge {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: #216FB9;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    border-radius: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
   }
-  
-  .droneImages {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
-    margin: 3rem 0;
-  }
-  
-  .priceContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .priceDetails {
-    display: flex;
-    flex-direction: column;
-  }
-  
   .brandName {
-    font-weight: 600;
-    font-size: 1.125rem;
-    color: rgba(62, 82, 100, 0.75);
+    font-size: 1rem;
   }
-  
   .productName {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #216FB9;
-  }
-  
-  .price {
-    font-weight: 700;
     font-size: 1.25rem;
   }
-  
-  .buyButton {
-    background-color: #216FB9;
-    color: white;
-    border-radius: 1.5rem;
-    padding: 0.25rem 1.5rem;
+  .price {
+    font-size: 1.125rem;
   }
-  
+  .buyButton {
+    padding: 0.25rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .certifyBadge {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  .brandName {
+    font-size: 0.875rem;
+  }
+  .productName {
+    font-size: 1.125rem;
+  }
+  .price {
+    font-size: 1rem;
+  }
+  .buyButton {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .certifyBadge {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  .brandName {
+    font-size: 0.75rem;
+  }
+  .productName {
+    font-size: 1rem;
+  }
+  .price {
+    font-size: 0.875rem;
+  }
+  .buyButton {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .certifyBadge {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  .brandName {
+    font-size: 0.75rem;
+  }
+  .productName {
+    font-size: 1rem;
+  }
+  .price {
+    font-size: 0.875rem;
+  }
+  .buyButton {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}

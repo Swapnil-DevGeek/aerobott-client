@@ -31,7 +31,7 @@ import  remote from "../../assets/aboutDrones/remote.png";
 //video
 import droneVideo from "../../assets/video/droneVideo.mp4";
 
-const SpecsCard = ({ head,subhead,logo }) => {
+const CostCard = ({ head,subhead,logo }) => {
   return (
     <div className={styles.card}>
       <div className={styles.iconCircle}>
@@ -47,30 +47,29 @@ const SpecsCard = ({ head,subhead,logo }) => {
 
 const Heading = ({text}) =>{
   return (
-    <div className='max-w-screen-xl text-[#216FB9] text-2xl font-semibold mx-auto flex justify-center items-center bg-[#80CAFF12] py-4 capitalize'>
+    <div className='max-w-screen-xl text-[#216FB9] text-lg lg:text-2xl font-semibold mx-auto flex justify-center items-center bg-[#80CAFF12] py-4 capitalize'>
       {text}
     </div>
   )
 };
 
-const KitCard = ({image,head,subtext})=>{
+const KitCard = ({ image, head, subtext }) => {
     return (
-        <div className="relative rounded-2xl overflow-hidden shadow-md w-80 h-80">
+        <div className="relative rounded-2xl overflow-hidden h-80 lg:mx-0 mx-12">
             <img
                 src={image}
                 alt="Tool Kit"
-                className="w-full object-cover"
+                className="w-full h-full object-cover"
             />
             <div className="absolute bottom-0 left-0 w-full bg-black/80 py-2 px-4 text-center">
                 <h2 className="text-lg font-bold text-white">{head}</h2>
                 <span className="text-sm text-gray-400">{subtext}</span>
             </div>
         </div>
-    )
+    );
 };
-
 const DroneDetail = () => {
-    const specsCardData = [
+    const CostCardData = [
         {head: "₹ 4,56,892", subhead: "Cost", logo: icon1},
         {head: "Medium", subhead: "Drone Category", logo: icon2},
         {head: "29.84 kg", subhead: "Max. take-off weight", logo: icon3},
@@ -115,19 +114,30 @@ const DroneDetail = () => {
     };
 
     const settings = {
+        className :'center',
         dots : true,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        pauseOnHover : true,
         infinite : true,
         speed : 500,
-        slidesToScroll : 1,
-        slidesToShow : 2
+        slidesToScroll : 2,
+        slidesToShow : 2,
+        swipeToSlide : true
     };
 
     const settings1 = {
-      dots : true,
-      infinite :true,
-      speed : 500,
-      slidesToScroll: 1,
-      slidesToShow: 1
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: true,
+        infinite: true,
+        speed: 500,
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        centerMode: true,
+        centerPadding: "0",
+        swipeToSlide : true
     };
 
     const videoRef = useRef(null);
@@ -172,16 +182,16 @@ const DroneDetail = () => {
 
           {/* desktop  view */}
           <div className='hidden max-w-screen-xl mx-auto mb-20 lg:flex lg:flex-wrap lg:justify-center lg:gap-16 lg:items-center'>
-              {specsCardData.map((spec, index) => (
-                  <SpecsCard key={index} head={spec.head} subhead={spec.subhead} logo={spec.logo}/>
+              {CostCardData.map((spec, index) => (
+                  <CostCard key={index} head={spec.head} subhead={spec.subhead} logo={spec.logo}/>
               ))}
           </div>
 
           {/* mobile view */}
           <div className="lg:hidden max-w-screen-xl mx-auto mb-20 ">
               <Slider {...settings}>
-                  {specsCardData.map((spec, index) => (
-                      <SpecsCard className="bg-black pb-12" key={index} head={spec.head} subhead={spec.subhead} logo={spec.logo}/>
+                  {CostCardData.map((spec, index) => (
+                      <CostCard className="bg-black pb-12" key={index} head={spec.head} subhead={spec.subhead} logo={spec.logo}/>
                   ))}
               </Slider>
           </div>
@@ -211,21 +221,23 @@ const DroneDetail = () => {
           <Heading text={"Things You Will Get With This Drone"}/>
 
           {/* cards desktop view */}
-          <div className='hidden max-w-screen-xl mx-auto lg:flex lg:justify-center lg:items-center lg:my-12'>
-              <div className="w-full flex lg:flex-nowrap flex-wrap lg:justify-between lg:items-center lg:gap-0 gap-3 ">
-                  {kitCardData.map((item,index)=>(
-                      <KitCard key={index} head={item.head} image={item.image} subtext={item.subhead}/>
+          <div className="hidden lg:flex lg:justify-center lg:items-center lg:my-12 max-w-screen-xl mx-auto">
+              <div className="w-full flex lg:flex-nowrap flex-wrap lg:justify-between lg:items-center lg:gap-3">
+                  {kitCardData.map((item, index) => (
+                      <KitCard key={index} head={item.head} image={item.image} subtext={item.subhead} />
                   ))}
               </div>
           </div>
 
           {/* cards mobile view */}
-          <div className='lg:hidden max-w-screen-xl mx-auto my-12'>
-              <Slider {...settings1}>
-                  {kitCardData.map((item,index)=>(
-                      <KitCard key={index} head={item.head} image={item.image} subtext={item.subhead}/>
-                  ))}
-              </Slider>
+          <div className="lg:hidden flex justify-center items-center my-12">
+              <div className="w-full md:w-[60vw]">
+                  <Slider {...settings1}>
+                      {kitCardData.map((item, index) => (
+                          <KitCard key={index} head={item.head} image={item.image} subtext={item.subhead} />
+                      ))}
+                  </Slider>
+              </div>
           </div>
 
           <Heading text={"FAQ'S"}/>
