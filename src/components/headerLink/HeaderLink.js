@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './HeaderLink.module.css';
 
-const HeaderLink = () => {
+const HeaderLink = ({type,name}) => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -11,8 +11,10 @@ const HeaderLink = () => {
           </svg>
         </div>
         <div className={styles.textContainer}>
-          <div className={styles.backText}>Back to All</div>
-          <div><span className={styles.linkText}>Drones</span> / Marut Drones Agricopter AG365</div>
+          <a href='/'>
+            <div className={styles.backText}>Back to All</div>
+          </a>
+          <div><span className={styles.linkText}>{type}</span> / {name}</div>
         </div>
       </div>
     </div>

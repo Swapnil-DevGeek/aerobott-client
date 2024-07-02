@@ -22,9 +22,9 @@ const Card = ({ image, name, curPrice, prevPrice }) => (
         <span className={styles.currentPrice}>₹{curPrice}</span>
         <span className={styles.previousPrice}>{prevPrice}</span>
       </div>
-      <div>
+      <a href='/battery-details'>
         <button className={styles.buyButton}>Buy Now</button>
-      </div>
+      </a>
     </div>
   </div>
 );

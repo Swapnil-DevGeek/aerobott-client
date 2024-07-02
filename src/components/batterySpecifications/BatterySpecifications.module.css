@@ -1,0 +1,85 @@
+.container {
+    font-family: 'Montserrat' , sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px; /* Set a max-width to limit the width of the container */
+}
+
+.title {
+    font-size: 24px;
+    color: #216FB9;
+    margin-bottom: 20px;
+}
+
+.specificationTable {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.specificationTable td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.label {
+    font-weight: 400;
+    font-size: 16px;
+    width: 50%;
+    color: #6E7898;
+
+}
+
+.value {
+    width: 50%;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.subtitle {
+    font-size: 22px;
+    color:  #216FB9;
+    font-family: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.list {
+    list-style-type: disc;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.list li {
+    margin-bottom: 10px;
+}
+
+.document1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.document2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.documentLink {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.pdfIcon {
+    width: 33px;
+    height: 44px;
+    margin-right: 10px;
+}
+
+.download {
+    margin-left: auto;
+    color: #216FB9;
+}

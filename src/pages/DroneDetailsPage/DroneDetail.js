@@ -171,7 +171,7 @@ const DroneDetail = () => {
     return (
       <>
           <SubHeader/>
-          <HeaderLink/>
+          <HeaderLink type={'Drones'} name={'Marut Drones Agricopter AG365'} />
           <AboutDrone/>
           <Heading text={"product specification"}/>
           <div
